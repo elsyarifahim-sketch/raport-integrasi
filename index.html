@@ -1,647 +1,1338 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Raport Integrasi | Pondok Modern Al-Ghozali</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+  Raport Integrasi | Pondok Modern Al-Ghozali
+</title>
 
 <style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
 
-:root{
-  --primary:#0f766e;
-  --primary-dark:#115e59;
-  --secondary:#14b8a6;
-  --bg:#f5f7f8;
-  --card:#ffffff;
-  --text:#172033;
-  --muted:#64748b;
-  --border:#e2e8f0;
-  --success:#15803d;
-  --danger:#dc2626;
-  --warning:#b45309;
-  --shadow:0 20px 50px rgba(15,23,42,.08);
+html{
+  scroll-behavior:smooth;
 }
 
 body{
   font-family:
     Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
     "Segoe UI",
+    Roboto,
+    Arial,
     sans-serif;
+
   background:
     radial-gradient(
-      circle at top left,
-      rgba(20,184,166,.13),
-      transparent 35%
+      circle at 10% 0%,
+      rgba(20,184,166,.14),
+      transparent 32%
     ),
-    linear-gradient(
-      135deg,
-      #f8fafc,
-      #eef5f5
-    );
-  color:var(--text);
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(15,118,110,.10),
+      transparent 28%
+    ),
+    #f5f8f8;
+
+  color:#172033;
+
   min-height:100vh;
 }
 
-button,
-select,
-input{
-  font:inherit;
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+
+  --primary:#0f766e;
+
+  --primary-dark:#115e59;
+
+  --primary-light:#ccfbf1;
+
+  --accent:#14b8a6;
+
+  --text:#172033;
+
+  --muted:#64748b;
+
+  --border:#e2e8f0;
+
+  --white:#ffffff;
+
+  --success:#15803d;
+
+  --success-bg:#f0fdf4;
+
+  --danger:#dc2626;
+
+  --danger-bg:#fef2f2;
+
+  --warning:#b45309;
+
+  --warning-bg:#fffbeb;
+
+  --shadow:
+    0 20px 55px
+    rgba(15,23,42,.08);
+
 }
 
-/* ========================================
+
+/* =========================================================
    HEADER
-======================================== */
+========================================================= */
 
 .header{
+
+  position:sticky;
+
+  top:0;
+
+  z-index:100;
+
   background:
     linear-gradient(
       135deg,
-      #064e3b,
-      #0f766e,
-      #115e59
+      #064e3b 0%,
+      #0f766e 55%,
+      #115e59 100%
     );
+
   color:white;
-  padding:22px 20px;
+
   box-shadow:
-    0 10px 30px rgba(6,78,59,.18);
+    0 10px 30px
+    rgba(6,78,59,.18);
+
 }
+
 
 .header-inner{
-  max-width:1180px;
+
+  max-width:1200px;
+
   margin:auto;
+
+  min-height:78px;
+
+  padding:
+    12px 20px;
+
   display:flex;
-  justify-content:space-between;
+
   align-items:center;
+
+  justify-content:space-between;
+
   gap:20px;
+
 }
+
 
 .brand{
+
   display:flex;
+
   align-items:center;
-  gap:15px;
+
+  gap:14px;
+
 }
+
 
 .logo{
-  width:56px;
-  height:56px;
-  border-radius:17px;
-  background:rgba(255,255,255,.13);
-  border:1px solid rgba(255,255,255,.2);
+
+  width:52px;
+
+  height:52px;
+
+  border-radius:16px;
+
   display:flex;
-  justify-content:center;
+
   align-items:center;
+
+  justify-content:center;
+
+  font-size:18px;
+
   font-weight:900;
-  font-size:22px;
-  backdrop-filter:blur(10px);
+
+  letter-spacing:-1px;
+
+  background:
+    rgba(255,255,255,.12);
+
+  border:
+    1px solid
+    rgba(255,255,255,.22);
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,.15);
+
 }
 
-.brand h1{
-  font-size:20px;
-  font-weight:850;
+
+.brand-title{
+
+  font-size:19px;
+
+  font-weight:900;
+
+  letter-spacing:.2px;
+
 }
 
-.brand p{
-  margin-top:4px;
-  font-size:13px;
-  opacity:.8;
+
+.brand-subtitle{
+
+  margin-top:3px;
+
+  font-size:12px;
+
+  opacity:.78;
+
 }
 
-.year{
-  padding:9px 15px;
+
+.year-badge{
+
+  padding:
+    9px 15px;
+
   border-radius:999px;
-  background:rgba(255,255,255,.1);
-  border:1px solid rgba(255,255,255,.18);
-  font-size:13px;
+
+  background:
+    rgba(255,255,255,.10);
+
+  border:
+    1px solid
+    rgba(255,255,255,.18);
+
+  font-size:12px;
+
+  font-weight:700;
+
   white-space:nowrap;
+
 }
 
-/* ========================================
+
+/* =========================================================
    MAIN
-======================================== */
+========================================================= */
 
 .main{
-  max-width:1180px;
-  margin:35px auto;
-  padding:0 20px 50px;
+
+  max-width:1200px;
+
+  margin:
+    0 auto;
+
+  padding:
+    32px 20px 60px;
+
 }
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
 
 .welcome{
-  margin-bottom:25px;
+
+  margin-bottom:24px;
+
 }
 
-.welcome h2{
+
+.welcome h1{
+
   font-size:28px;
-  font-weight:850;
+
+  font-weight:900;
+
+  letter-spacing:-.5px;
+
 }
+
 
 .welcome p{
+
   margin-top:7px;
+
   color:var(--muted);
+
   font-size:14px;
+
 }
 
-/* ========================================
+
+/* =========================================================
    STEPS
-======================================== */
+========================================================= */
 
 .steps{
+
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(4,1fr);
+
   gap:12px;
-  margin-bottom:25px;
+
+  margin-bottom:22px;
+
 }
+
 
 .step{
-  background:rgba(255,255,255,.85);
-  border:1px solid var(--border);
+
+  background:
+    rgba(255,255,255,.9);
+
+  border:
+    1px solid
+    var(--border);
+
   border-radius:16px;
-  padding:14px;
+
+  padding:13px;
+
   display:flex;
+
   align-items:center;
+
   gap:11px;
+
+  transition:.2s;
+
 }
+
+
+.step.active{
+
+  border-color:
+    rgba(15,118,110,.35);
+
+  background:
+    #f0fdfa;
+
+}
+
 
 .step-number{
-  width:35px;
-  height:35px;
-  flex-shrink:0;
+
+  width:36px;
+
+  height:36px;
+
   border-radius:11px;
-  background:#e2e8f0;
-  color:#64748b;
+
+  flex-shrink:0;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
-  font-weight:800;
+
+  background:#e2e8f0;
+
+  color:#64748b;
+
+  font-weight:900;
+
+  font-size:13px;
+
 }
+
 
 .step.active .step-number{
-  background:var(--primary);
+
+  background:
+    var(--primary);
+
   color:white;
+
 }
+
 
 .step-title{
-  font-size:11px;
+
   color:var(--muted);
+
+  font-size:10px;
+
 }
+
 
 .step-name{
-  font-size:13px;
-  font-weight:750;
+
   margin-top:2px;
+
+  font-size:13px;
+
+  font-weight:800;
+
 }
 
-/* ========================================
+
+/* =========================================================
    CARD
-======================================== */
+========================================================= */
 
 .card{
-  background:rgba(255,255,255,.96);
-  border:1px solid rgba(226,232,240,.9);
-  border-radius:23px;
-  box-shadow:var(--shadow);
+
+  background:
+    rgba(255,255,255,.96);
+
+  border:
+    1px solid
+    rgba(226,232,240,.9);
+
+  border-radius:22px;
+
   overflow:hidden;
+
+  box-shadow:
+    var(--shadow);
+
 }
+
 
 .card-header{
-  padding:24px 26px;
-  border-bottom:1px solid var(--border);
+
+  padding:
+    23px 25px;
+
+  border-bottom:
+    1px solid
+    var(--border);
+
 }
 
-.card-header h3{
+
+.card-header h2{
+
   font-size:18px;
-  font-weight:800;
+
+  font-weight:850;
+
 }
+
 
 .card-header p{
+
   margin-top:5px;
+
   color:var(--muted);
+
   font-size:13px;
+
 }
+
 
 .card-body{
-  padding:26px;
+
+  padding:25px;
+
 }
 
-/* ========================================
+
+/* =========================================================
    FORM
-======================================== */
+========================================================= */
 
 .form-grid{
+
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:18px;
+
 }
+
 
 .form-group label{
+
   display:block;
+
   margin-bottom:8px;
-  font-size:13px;
-  font-weight:750;
+
   color:#334155;
+
+  font-size:13px;
+
+  font-weight:800;
+
 }
+
 
 select{
+
   width:100%;
+
   height:50px;
-  border:1px solid #cbd5e1;
+
+  padding:
+    0 14px;
+
+  border:
+    1px solid
+    #cbd5e1;
+
   border-radius:13px;
-  padding:0 14px;
-  background:white;
-  color:#0f172a;
+
   outline:none;
+
+  background:white;
+
+  color:#0f172a;
+
+  font-size:14px;
+
   cursor:pointer;
+
   transition:.2s;
+
 }
+
+
+select:hover{
+
+  border-color:
+    #94a3b8;
+
+}
+
 
 select:focus{
-  border-color:var(--primary);
+
+  border-color:
+    var(--primary);
+
   box-shadow:
-    0 0 0 4px rgba(15,118,110,.1);
+    0 0 0 4px
+    rgba(15,118,110,.10);
+
 }
 
-/* ========================================
+
+select:disabled{
+
+  background:#f8fafc;
+
+  color:#94a3b8;
+
+  cursor:not-allowed;
+
+}
+
+
+/* =========================================================
    BUTTON
-======================================== */
+========================================================= */
 
 .actions{
+
+  margin-top:22px;
+
   display:flex;
+
   justify-content:flex-end;
+
   gap:10px;
-  margin-top:24px;
+
 }
+
 
 .btn{
+
+  min-height:44px;
+
+  padding:
+    0 19px;
+
   border:0;
-  border-radius:13px;
-  padding:13px 21px;
+
+  border-radius:12px;
+
+  font-size:13px;
+
+  font-weight:850;
+
   cursor:pointer;
-  font-weight:800;
+
   transition:.2s;
+
 }
 
+
 .btn-primary{
+
   color:white;
+
   background:
     linear-gradient(
       135deg,
       var(--primary),
-      var(--secondary)
+      var(--accent)
     );
+
   box-shadow:
-    0 8px 20px rgba(15,118,110,.22);
+    0 8px 20px
+    rgba(15,118,110,.18);
+
 }
+
 
 .btn-primary:hover{
-  transform:translateY(-1px);
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 12px 24px
+    rgba(15,118,110,.22);
+
 }
+
 
 .btn-primary:disabled{
+
   opacity:.45;
+
   cursor:not-allowed;
+
   transform:none;
+
+  box-shadow:none;
+
 }
+
 
 .btn-secondary{
-  background:#f1f5f9;
-  color:#334155;
+
+  background:
+    #f1f5f9;
+
+  color:
+    #334155;
+
 }
+
 
 .btn-secondary:hover{
-  background:#e2e8f0;
+
+  background:
+    #e2e8f0;
+
 }
 
-/* ========================================
-   INFO
-======================================== */
+
+/* =========================================================
+   PETUNJUK
+========================================================= */
 
 .info-box{
+
   margin-top:20px;
-  padding:16px 18px;
+
+  padding:
+    16px 18px;
+
   border-radius:14px;
-  background:#f0fdfa;
-  border:1px solid #ccfbf1;
-  color:#115e59;
+
+  background:
+    #f0fdfa;
+
+  border:
+    1px solid
+    #ccfbf1;
+
+  color:
+    #115e59;
+
   font-size:13px;
+
   line-height:1.65;
+
 }
 
-.info-box strong{
-  display:block;
-  margin-bottom:4px;
+
+.info-box-title{
+
+  font-weight:850;
+
+  margin-bottom:3px;
+
 }
 
-/* ========================================
+
+/* =========================================================
    LOADING
-======================================== */
+========================================================= */
 
 .loading{
+
   display:none;
+
+  margin-top:22px;
+
+  padding:
+    38px 20px;
+
   text-align:center;
-  padding:45px 20px;
-  margin-top:25px;
+
 }
+
 
 .spinner{
+
   width:40px;
+
   height:40px;
-  border:4px solid #ccfbf1;
-  border-top-color:var(--primary);
-  border-radius:50%;
-  animation:spin .8s linear infinite;
+
   margin:auto;
+
+  border:
+    4px solid
+    #ccfbf1;
+
+  border-top-color:
+    var(--primary);
+
+  border-radius:50%;
+
+  animation:
+    spin .8s linear infinite;
+
 }
 
-.loading p{
-  margin-top:14px;
-  color:var(--muted);
-  font-size:13px;
-}
 
 @keyframes spin{
+
   to{
     transform:rotate(360deg);
   }
+
 }
 
-/* ========================================
-   MAPEL
-======================================== */
+
+.loading-text{
+
+  margin-top:13px;
+
+  color:var(--muted);
+
+  font-size:13px;
+
+}
+
+
+/* =========================================================
+   SECTION MAPEL
+========================================================= */
 
 #mapelSection{
+
   display:none;
-  margin-top:25px;
+
+  margin-top:22px;
+
 }
+
 
 .mapel-grid{
+
   display:grid;
+
   grid-template-columns:
-    repeat(auto-fill,minmax(210px,1fr));
+    repeat(
+      auto-fill,
+      minmax(210px,1fr)
+    );
+
   gap:12px;
+
 }
+
 
 .mapel-item{
-  border:1px solid var(--border);
-  border-radius:14px;
+
+  min-height:108px;
+
   padding:16px;
-  background:#fff;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:15px;
+
+  background:white;
+
   cursor:pointer;
+
   transition:.2s;
+
 }
+
 
 .mapel-item:hover{
-  border-color:var(--primary);
-  transform:translateY(-2px);
+
+  border-color:
+    rgba(15,118,110,.5);
+
+  transform:
+    translateY(-2px);
+
   box-shadow:
-    0 8px 20px rgba(15,23,42,.06);
+    0 10px 24px
+    rgba(15,23,42,.07);
+
 }
+
 
 .mapel-item.selected{
-  border-color:var(--primary);
-  background:#f0fdfa;
+
+  background:
+    #f0fdfa;
+
+  border-color:
+    var(--primary);
+
   box-shadow:
-    0 0 0 3px rgba(15,118,110,.08);
+    0 0 0 3px
+    rgba(15,118,110,.08);
+
 }
+
 
 .mapel-number{
-  width:30px;
-  height:30px;
+
+  width:31px;
+
+  height:31px;
+
   border-radius:9px;
-  background:#e6fffb;
-  color:var(--primary);
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
+  background:
+    #ccfbf1;
+
+  color:
+    var(--primary);
+
   font-size:12px;
-  font-weight:800;
-  margin-bottom:10px;
+
+  font-weight:900;
+
+  margin-bottom:12px;
+
 }
+
 
 .mapel-name{
+
   font-size:14px;
-  font-weight:750;
+
+  line-height:1.45;
+
+  font-weight:800;
+
+  color:#172033;
+
 }
 
-/* ========================================
-   NILAI
-======================================== */
+
+/* =========================================================
+   NILAI SECTION
+========================================================= */
 
 #nilaiSection{
+
   display:none;
-  margin-top:25px;
+
+  margin-top:22px;
+
 }
+
 
 .nilai-toolbar{
-  padding:18px 22px;
-  background:#f8fafc;
-  border-bottom:1px solid var(--border);
+
+  padding:
+    18px 22px;
+
+  background:
+    #f8fafc;
+
+  border-bottom:
+    1px solid
+    var(--border);
+
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
   gap:15px;
+
 }
 
-.kelas-info h3{
+
+.nilai-title{
+
   font-size:17px;
+
+  font-weight:900;
+
 }
 
-.kelas-info p{
+
+.nilai-subtitle{
+
   margin-top:4px;
+
   color:var(--muted);
+
   font-size:12px;
+
 }
+
+
+/* =========================================================
+   TABLE
+========================================================= */
 
 .table-wrapper{
+
   overflow-x:auto;
+
 }
 
+
 table{
+
   width:100%;
-  border-collapse:collapse;
+
   min-width:700px;
+
+  border-collapse:collapse;
+
 }
+
+
+thead th{
+
+  background:
+    #f8fafc;
+
+  color:
+    #475569;
+
+  font-size:11px;
+
+  text-transform:uppercase;
+
+  letter-spacing:.4px;
+
+  font-weight:850;
+
+}
+
 
 th,
 td{
-  padding:13px 15px;
-  border-bottom:1px solid var(--border);
-  font-size:13px;
+
+  padding:
+    13px 15px;
+
+  border-bottom:
+    1px solid
+    var(--border);
+
 }
 
-th{
-  background:#f8fafc;
-  color:#475569;
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.35px;
+
+tbody tr{
+
+  transition:.15s;
+
 }
+
+
+tbody tr:hover{
+
+  background:
+    #f8fafc;
+
+}
+
 
 th:first-child,
 td:first-child{
-  width:60px;
+
+  width:65px;
+
   text-align:center;
+
 }
 
-th:nth-child(3),
-td:nth-child(3){
-  width:130px;
+
+th:last-child,
+td:last-child{
+
+  width:150px;
+
 }
+
 
 .student-name{
-  font-weight:700;
+
+  font-size:13px;
+
+  font-weight:750;
+
 }
+
 
 .student-nisn{
-  font-size:11px;
-  color:var(--muted);
+
   margin-top:3px;
+
+  color:var(--muted);
+
+  font-size:11px;
+
 }
+
 
 .nilai-input{
-  width:95px;
+
+  width:100px;
+
   height:40px;
-  border:1px solid #cbd5e1;
+
+  padding:
+    0 10px;
+
+  border:
+    1px solid
+    #cbd5e1;
+
   border-radius:9px;
-  padding:0 10px;
+
   outline:none;
+
   text-align:center;
+
+  font-weight:800;
+
+  background:white;
+
 }
+
 
 .nilai-input:focus{
-  border-color:var(--primary);
+
+  border-color:
+    var(--primary);
+
   box-shadow:
-    0 0 0 3px rgba(15,118,110,.1);
+    0 0 0 3px
+    rgba(15,118,110,.10);
+
 }
 
-/* ========================================
+
+.nilai-input.invalid{
+
+  border-color:
+    var(--danger);
+
+  background:
+    var(--danger-bg);
+
+}
+
+
+/* =========================================================
    STATUS
-======================================== */
+========================================================= */
 
 #status{
+
   display:none;
+
   margin-top:18px;
-  padding:14px 17px;
+
+  padding:
+    14px 17px;
+
   border-radius:13px;
+
   font-size:13px;
-  line-height:1.5;
+
+  line-height:1.55;
+
 }
+
 
 #status.success{
+
   display:block;
-  background:#f0fdf4;
-  border:1px solid #bbf7d0;
-  color:#166534;
+
+  color:
+    #166534;
+
+  background:
+    var(--success-bg);
+
+  border:
+    1px solid
+    #bbf7d0;
+
 }
+
 
 #status.error{
+
   display:block;
-  background:#fef2f2;
-  border:1px solid #fecaca;
-  color:#991b1b;
+
+  color:
+    #991b1b;
+
+  background:
+    var(--danger-bg);
+
+  border:
+    1px solid
+    #fecaca;
+
 }
+
 
 #status.warning{
+
   display:block;
-  background:#fffbeb;
-  border:1px solid #fde68a;
-  color:#92400e;
+
+  color:
+    #92400e;
+
+  background:
+    var(--warning-bg);
+
+  border:
+    1px solid
+    #fde68a;
+
 }
 
-/* ========================================
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.empty{
+
+  grid-column:
+    1 / -1;
+
+  text-align:center;
+
+  padding:40px 20px;
+
+  color:var(--muted);
+
+  font-size:13px;
+
+}
+
+
+/* =========================================================
    FOOTER
-======================================== */
+========================================================= */
 
 .footer{
+
+  padding:
+    25px 20px 35px;
+
   text-align:center;
+
   color:#94a3b8;
-  font-size:12px;
-  padding:20px;
+
+  font-size:11px;
+
 }
 
-/* ========================================
-   MOBILE
-======================================== */
 
-@media(max-width:800px){
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:850px){
 
   .steps{
-    grid-template-columns:1fr 1fr;
-  }
 
-  .form-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:
+      1fr 1fr;
+
   }
 
 }
 
-@media(max-width:600px){
+
+@media(max-width:650px){
 
   .header-inner{
-    align-items:flex-start;
+
+    min-height:70px;
+
   }
 
-  .year{
+
+  .brand-title{
+
+    font-size:16px;
+
+  }
+
+
+  .brand-subtitle{
+
+    font-size:10px;
+
+  }
+
+
+  .logo{
+
+    width:44px;
+
+    height:44px;
+
+    border-radius:13px;
+
+  }
+
+
+  .year-badge{
+
     display:none;
+
   }
 
-  .brand h1{
-    font-size:17px;
+
+  .main{
+
+    padding:
+      25px 14px 50px;
+
   }
 
-  .brand p{
-    font-size:11px;
+
+  .welcome h1{
+
+    font-size:23px;
+
   }
+
 
   .steps{
-    grid-template-columns:1fr;
+
+    grid-template-columns:
+      1fr;
+
   }
 
-  .welcome h2{
-    font-size:23px;
+
+  .form-grid{
+
+    grid-template-columns:
+      1fr;
+
   }
+
 
   .card-body{
+
     padding:20px;
+
   }
+
 
   .nilai-toolbar{
+
     align-items:flex-start;
+
     flex-direction:column;
+
   }
+
 
   .actions{
+
     flex-direction:column;
+
   }
 
+
   .actions .btn{
+
     width:100%;
+
   }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
-<div class="app">
 
-<!-- ==========================================
+<!-- ========================================================
      HEADER
-========================================== -->
+========================================================= -->
 
 <header class="header">
 
   <div class="header-inner">
+
 
     <div class="brand">
 
@@ -651,140 +1342,171 @@ td:nth-child(3){
 
       <div>
 
-        <h1>
+        <div class="brand-title">
           RAPORT INTEGRASI
-        </h1>
+        </div>
 
-        <p>
+        <div class="brand-subtitle">
           Pondok Modern Al-Ghozali
-        </p>
+        </div>
 
       </div>
 
     </div>
 
-    <div class="year">
+
+    <div class="year-badge">
       Tahun Pelajaran 2026–2027
     </div>
+
 
   </div>
 
 </header>
 
 
-<!-- ==========================================
+
+<!-- ========================================================
      MAIN
-========================================== -->
+========================================================= -->
 
 <main class="main">
 
-  <div class="welcome">
 
-    <h2>
+  <section class="welcome">
+
+    <h1>
       Input Nilai
-    </h2>
+    </h1>
 
     <p>
-      Silakan pilih jenjang, kelas, dan mata pelajaran
+      Pilih jenjang, kelas, dan mata pelajaran
       untuk mulai mengisi nilai siswa.
     </p>
 
-  </div>
+  </section>
 
 
-  <!-- STEPS -->
+
+  <!-- ======================================================
+       STEP INDICATOR
+  ======================================================= -->
 
   <div class="steps">
 
-    <div class="step active">
+
+    <div
+      id="step1"
+      class="step active"
+    >
 
       <div class="step-number">
         1
       </div>
 
       <div>
+
         <div class="step-title">
-          Langkah 1
+          LANGKAH 1
         </div>
 
         <div class="step-name">
           Jenjang
         </div>
+
       </div>
 
     </div>
 
 
-    <div class="step">
+    <div
+      id="step2"
+      class="step"
+    >
 
       <div class="step-number">
         2
       </div>
 
       <div>
+
         <div class="step-title">
-          Langkah 2
+          LANGKAH 2
         </div>
 
         <div class="step-name">
           Kelas
         </div>
+
       </div>
 
     </div>
 
 
-    <div class="step">
+    <div
+      id="step3"
+      class="step"
+    >
 
       <div class="step-number">
         3
       </div>
 
       <div>
+
         <div class="step-title">
-          Langkah 3
+          LANGKAH 3
         </div>
 
         <div class="step-name">
           Mata Pelajaran
         </div>
+
       </div>
 
     </div>
 
 
-    <div class="step">
+    <div
+      id="step4"
+      class="step"
+    >
 
       <div class="step-number">
         4
       </div>
 
       <div>
+
         <div class="step-title">
-          Langkah 4
+          LANGKAH 4
         </div>
 
         <div class="step-name">
           Input Nilai
         </div>
+
       </div>
 
     </div>
 
+
   </div>
 
 
-  <!-- ========================================
+
+  <!-- ======================================================
        PILIH KELAS
-  ======================================== -->
+  ======================================================= -->
 
   <section class="card">
 
+
     <div class="card-header">
 
-      <h3>
+      <h2>
         Pilih Data Kelas
-      </h3>
+      </h2>
 
       <p>
         Tentukan jenjang dan kelas yang akan digunakan.
@@ -794,6 +1516,7 @@ td:nth-child(3){
 
 
     <div class="card-body">
+
 
       <div class="form-grid">
 
@@ -828,6 +1551,7 @@ td:nth-child(3){
         </div>
 
 
+
         <!-- KELAS -->
 
         <div class="form-group">
@@ -843,7 +1567,7 @@ td:nth-child(3){
           >
 
             <option value="">
-              Pilih Jenjang Terlebih Dahulu
+              Pilih jenjang terlebih dahulu
             </option>
 
           </select>
@@ -854,17 +1578,20 @@ td:nth-child(3){
       </div>
 
 
+
       <div class="info-box">
 
-        <strong>
-          Petunjuk Pengisian
-        </strong>
+        <div class="info-box-title">
+          💡 Petunjuk Pengisian
+        </div>
 
         Pilih jenjang terlebih dahulu, kemudian pilih kelas.
-        Setelah data kelas berhasil terhubung, daftar mata
-        pelajaran akan ditampilkan secara otomatis.
+        Setelah kelas terhubung, daftar mata pelajaran akan
+        muncul secara otomatis. Pilih mata pelajaran untuk
+        menampilkan seluruh siswa dan mengisi nilai.
 
       </div>
+
 
 
       <div class="actions">
@@ -880,46 +1607,53 @@ td:nth-child(3){
 
       </div>
 
+
     </div>
 
   </section>
 
 
-  <!-- ========================================
-       LOADING
-  ======================================== -->
 
-  <div
+  <!-- ======================================================
+       LOADING
+  ======================================================= -->
+
+  <section
     id="loading"
     class="card loading"
   >
 
     <div class="spinner"></div>
 
-    <p id="loadingText">
-      Menghubungkan ke data kelas...
-    </p>
+    <div
+      id="loadingText"
+      class="loading-text"
+    >
+      Menghubungkan ke data...
+    </div>
 
-  </div>
+  </section>
 
 
-  <!-- ========================================
-       MAPEL
-  ======================================== -->
+
+  <!-- ======================================================
+       MATA PELAJARAN
+  ======================================================= -->
 
   <section
     id="mapelSection"
     class="card"
   >
 
+
     <div class="card-header">
 
-      <h3>
+      <h2>
         Pilih Mata Pelajaran
-      </h3>
+      </h2>
 
       <p id="mapelInfo">
-        Mata pelajaran kelas
+        Daftar mata pelajaran
       </p>
 
     </div>
@@ -935,29 +1669,39 @@ td:nth-child(3){
 
     </div>
 
+
   </section>
 
 
-  <!-- ========================================
-       NILAI
-  ======================================== -->
+
+  <!-- ======================================================
+       INPUT NILAI
+  ======================================================= -->
 
   <section
     id="nilaiSection"
     class="card"
   >
 
+
     <div class="nilai-toolbar">
 
-      <div class="kelas-info">
 
-        <h3 id="judulNilai">
+      <div>
+
+        <div
+          id="judulNilai"
+          class="nilai-title"
+        >
           Input Nilai
-        </h3>
+        </div>
 
-        <p id="subjudulNilai">
+        <div
+          id="subjudulNilai"
+          class="nilai-subtitle"
+        >
           -
-        </p>
+        </div>
 
       </div>
 
@@ -966,15 +1710,18 @@ td:nth-child(3){
         class="btn btn-secondary"
         onclick="kembaliMapel()"
       >
-        ← Ganti Mapel
+        ← Ganti Mata Pelajaran
       </button>
 
+
     </div>
+
 
 
     <div class="table-wrapper">
 
       <table>
+
 
         <thead>
 
@@ -996,12 +1743,17 @@ td:nth-child(3){
 
         </thead>
 
-        <tbody id="siswaBody">
+
+        <tbody
+          id="siswaBody"
+        >
         </tbody>
+
 
       </table>
 
     </div>
+
 
 
     <div class="card-body">
@@ -1009,6 +1761,7 @@ td:nth-child(3){
       <div class="actions">
 
         <button
+          id="btnSimpan"
           class="btn btn-primary"
           onclick="simpanNilai()"
         >
@@ -1019,10 +1772,14 @@ td:nth-child(3){
 
     </div>
 
+
   </section>
 
 
-  <!-- STATUS -->
+
+  <!-- ======================================================
+       STATUS
+  ======================================================= -->
 
   <div id="status"></div>
 
@@ -1030,24 +1787,28 @@ td:nth-child(3){
 </main>
 
 
+
+<!-- ========================================================
+     FOOTER
+========================================================= -->
+
 <footer class="footer">
 
   RAPORT INTEGRASI
   •
   Pondok Modern Al-Ghozali
   •
-  2026–2027
+  Tahun Pelajaran 2026–2027
 
 </footer>
 
-</div>
 
 
 <script>
 
-/* ============================================================
-   KONFIGURASI KELAS
-   ============================================================ */
+/* =========================================================
+   URL APPS SCRIPT
+========================================================= */
 
 const CLASS_URLS = {
 
@@ -1064,18 +1825,21 @@ const CLASS_URLS = {
 
   },
 
+
   SMA: {
 
-    /* URL SMA akan kita masukkan nanti */
+    /*
+     * URL SMA kita isi nanti.
+     */
 
   }
 
 };
 
 
-/* ============================================================
-   STATE APLIKASI
-   ============================================================ */
+/* =========================================================
+   STATE
+========================================================= */
 
 let currentJenjang = "";
 
@@ -1088,69 +1852,134 @@ let currentUrl = "";
 let currentStudents = [];
 
 
-/* ============================================================
+/* =========================================================
    ELEMENT
-   ============================================================ */
+========================================================= */
 
 const jenjangEl =
-  document.getElementById("jenjang");
+  document.getElementById(
+    "jenjang"
+  );
+
 
 const kelasEl =
-  document.getElementById("kelas");
+  document.getElementById(
+    "kelas"
+  );
+
 
 const btnMapel =
-  document.getElementById("btnMapel");
+  document.getElementById(
+    "btnMapel"
+  );
+
 
 const loadingEl =
-  document.getElementById("loading");
+  document.getElementById(
+    "loading"
+  );
+
 
 const loadingText =
-  document.getElementById("loadingText");
+  document.getElementById(
+    "loadingText"
+  );
+
 
 const mapelSection =
-  document.getElementById("mapelSection");
+  document.getElementById(
+    "mapelSection"
+  );
+
 
 const mapelGrid =
-  document.getElementById("mapelGrid");
+  document.getElementById(
+    "mapelGrid"
+  );
+
 
 const mapelInfo =
-  document.getElementById("mapelInfo");
+  document.getElementById(
+    "mapelInfo"
+  );
+
 
 const nilaiSection =
-  document.getElementById("nilaiSection");
+  document.getElementById(
+    "nilaiSection"
+  );
+
 
 const siswaBody =
-  document.getElementById("siswaBody");
+  document.getElementById(
+    "siswaBody"
+  );
+
 
 const statusEl =
-  document.getElementById("status");
+  document.getElementById(
+    "status"
+  );
 
 
-/* ============================================================
+/* =========================================================
    UBAH JENJANG
-   ============================================================ */
+========================================================= */
 
 function ubahJenjang(){
 
   const jenjang =
     jenjangEl.value;
 
-  kelasEl.innerHTML = "";
 
-  btnMapel.disabled = true;
+  currentJenjang =
+    jenjang;
 
-  mapelSection.style.display = "none";
 
-  nilaiSection.style.display = "none";
+  currentKelas =
+    "";
+
+  currentSubject =
+    "";
+
+  currentUrl =
+    "";
+
+
+  kelasEl.innerHTML =
+    "";
+
+
+  btnMapel.disabled =
+    true;
+
+
+  mapelSection.style.display =
+    "none";
+
+
+  nilaiSection.style.display =
+    "none";
+
+
+  hideStatus();
+
+
+  resetSteps();
+
 
   if(!jenjang){
 
-    kelasEl.disabled = true;
+    kelasEl.disabled =
+      true;
+
 
     kelasEl.innerHTML = `
+
       <option value="">
-        Pilih Jenjang Terlebih Dahulu
+        Pilih jenjang terlebih dahulu
       </option>
+
     `;
 
     return;
@@ -1158,75 +1987,101 @@ function ubahJenjang(){
   }
 
 
-  kelasEl.disabled = false;
+  kelasEl.disabled =
+    false;
 
 
-  const kelas =
-    CLASS_URLS[jenjang] || {};
+  const daftarKelas =
+    CLASS_URLS[jenjang] ||
+    {};
 
 
-  const daftar =
-    Object.keys(kelas);
-
-
-  const awal =
-    document.createElement("option");
-
-  awal.value = "";
-
-  awal.textContent =
-    "Pilih Kelas";
-
-  kelasEl.appendChild(awal);
-
-
-  daftar.forEach(namaKelas => {
-
-    const option =
-      document.createElement("option");
-
-    option.value =
-      namaKelas;
-
-    option.textContent =
-      namaKelas;
-
-    kelasEl.appendChild(option);
-
-  });
-
-}
-
-
-/* ============================================================
-   CEK KELAS
-   ============================================================ */
-
-function cekKelas(){
-
-  btnMapel.disabled =
-    !(
-      jenjangEl.value &&
-      kelasEl.value
+  const kelasList =
+    Object.keys(
+      daftarKelas
     );
 
+
+  kelasEl.innerHTML = `
+
+    <option value="">
+      Pilih Kelas
+    </option>
+
+  `;
+
+
+  kelasList.forEach(
+    function(namaKelas){
+
+      const option =
+        document.createElement(
+          "option"
+        );
+
+
+      option.value =
+        namaKelas;
+
+
+      option.textContent =
+        namaKelas;
+
+
+      kelasEl.appendChild(
+        option
+      );
+
+    }
+  );
+
+
+  setStep(
+    1
+  );
+
 }
 
 
-/* ============================================================
-   AMBIL MATA PELAJARAN
-   ============================================================ */
+/* =========================================================
+   CEK KELAS
+========================================================= */
 
-function ambilMapel(){
-
-  currentJenjang =
-    jenjangEl.value;
+function cekKelas(){
 
   currentKelas =
     kelasEl.value;
 
 
-  if(!currentJenjang || !currentKelas){
+  btnMapel.disabled =
+    !(
+      currentJenjang &&
+      currentKelas
+    );
+
+
+  if(currentKelas){
+
+    setStep(
+      2
+    );
+
+  }
+
+
+}
+
+
+/* =========================================================
+   AMBIL MAPEL
+========================================================= */
+
+function ambilMapel(){
+
+  if(
+    !currentJenjang ||
+    !currentKelas
+  ){
 
     tampilStatus(
       "Silakan pilih jenjang dan kelas terlebih dahulu.",
@@ -1247,7 +2102,7 @@ function ambilMapel(){
   if(!currentUrl){
 
     tampilStatus(
-      "URL untuk kelas ini belum tersedia.",
+      "URL kelas ini belum dikonfigurasi.",
       "error"
     );
 
@@ -1259,25 +2114,31 @@ function ambilMapel(){
   mapelSection.style.display =
     "none";
 
+
   nilaiSection.style.display =
     "none";
+
+
+  hideStatus();
+
+
+  setStep(
+    3
+  );
+
 
   tampilLoading(
     "Mengambil daftar mata pelajaran..."
   );
 
 
-  /*
-   * Code.gs menggunakan:
-   *
-   * ?action=subjects
-   *
-   * dan JSONP.
-   */
+  const url =
+    currentUrl +
+    "?action=subjects";
+
 
   requestJSONP(
-    currentUrl +
-    "?action=subjects",
+    url,
     function(data){
 
       sembunyikanLoading();
@@ -1286,7 +2147,7 @@ function ambilMapel(){
       if(!data){
 
         tampilStatus(
-          "Tidak ada respons dari Apps Script.",
+          "Server tidak memberikan respons.",
           "error"
         );
 
@@ -1295,10 +2156,11 @@ function ambilMapel(){
       }
 
 
-      if(data.ok === false){
+      if(
+        data.success === false
+      ){
 
         tampilStatus(
-          data.error ||
           data.message ||
           "Gagal mengambil mata pelajaran.",
           "error"
@@ -1310,9 +2172,11 @@ function ambilMapel(){
 
 
       const subjects =
-        data.subjects ||
-        data.data ||
-        [];
+        Array.isArray(
+          data.subjects
+        )
+          ? data.subjects
+          : [];
 
 
       tampilkanMapel(
@@ -1325,19 +2189,26 @@ function ambilMapel(){
 }
 
 
-/* ============================================================
+/* =========================================================
    TAMPIL MAPEL
-   ============================================================ */
+========================================================= */
 
-function tampilkanMapel(subjects){
+function tampilkanMapel(
+  subjects
+){
 
-  mapelGrid.innerHTML = "";
+  mapelGrid.innerHTML =
+    "";
 
 
-  if(!Array.isArray(subjects)){
+  if(
+    !Array.isArray(
+      subjects
+    )
+  ){
 
     tampilStatus(
-      "Format daftar mata pelajaran tidak sesuai.",
+      "Format data mata pelajaran tidak sesuai.",
       "error"
     );
 
@@ -1346,17 +2217,19 @@ function tampilkanMapel(subjects){
   }
 
 
-  if(subjects.length === 0){
+  if(
+    subjects.length === 0
+  ){
 
     mapelGrid.innerHTML = `
-      <div style="
-        grid-column:1/-1;
-        text-align:center;
-        padding:35px;
-        color:#64748b;
-      ">
-        Tidak ada mata pelajaran yang ditemukan.
+
+      <div class="empty">
+
+        Tidak ada mata pelajaran
+        yang ditemukan untuk kelas ini.
+
       </div>
+
     `;
 
   }
@@ -1365,8 +2238,38 @@ function tampilkanMapel(subjects){
   subjects.forEach(
     function(subject,index){
 
+      /*
+       * Code.gs:
+       *
+       * {
+       *   name: "Matematika",
+       *   column: 4
+       * }
+       *
+       * Yang kita gunakan sebagai
+       * nama mapel adalah .name
+       */
+
+      const subjectName =
+        typeof subject === "object"
+          ? subject.name
+          : subject;
+
+
+      if(
+        !subjectName
+      ){
+
+        return;
+
+      }
+
+
       const item =
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
+
 
       item.className =
         "mapel-item";
@@ -1379,7 +2282,9 @@ function tampilkanMapel(subjects){
         </div>
 
         <div class="mapel-name">
-          ${escapeHtml(subject)}
+          ${escapeHtml(
+            subjectName
+          )}
         </div>
 
       `;
@@ -1389,14 +2294,16 @@ function tampilkanMapel(subjects){
         function(){
 
           pilihMapel(
-            subject,
+            subjectName,
             item
           );
 
         };
 
 
-      mapelGrid.appendChild(item);
+      mapelGrid.appendChild(
+        item
+      );
 
     }
   );
@@ -1419,9 +2326,9 @@ function tampilkanMapel(subjects){
 }
 
 
-/* ============================================================
+/* =========================================================
    PILIH MAPEL
-   ============================================================ */
+========================================================= */
 
 function pilihMapel(
   subject,
@@ -1433,12 +2340,17 @@ function pilihMapel(
 
 
   document
-    .querySelectorAll(".mapel-item")
+    .querySelectorAll(
+      ".mapel-item"
+    )
     .forEach(
-      item =>
+      function(item){
+
         item.classList.remove(
           "selected"
-        )
+        );
+
+      }
     );
 
 
@@ -1447,14 +2359,19 @@ function pilihMapel(
   );
 
 
+  setStep(
+    4
+  );
+
+
   ambilSiswa();
 
 }
 
 
-/* ============================================================
+/* =========================================================
    AMBIL SISWA
-   ============================================================ */
+========================================================= */
 
 function ambilSiswa(){
 
@@ -1462,20 +2379,18 @@ function ambilSiswa(){
     "none";
 
 
+  hideStatus();
+
+
   tampilLoading(
-    "Mengambil daftar siswa..."
+    "Mengambil data siswa..."
   );
 
 
-  /*
-   * Code.gs:
-   *
-   * ?action=students&subject=...
-   */
-
   const url =
     currentUrl +
-    "?action=students&subject=" +
+    "?action=students" +
+    "&subject=" +
     encodeURIComponent(
       currentSubject
     );
@@ -1491,7 +2406,7 @@ function ambilSiswa(){
       if(!data){
 
         tampilStatus(
-          "Tidak ada respons dari Apps Script.",
+          "Server tidak memberikan respons.",
           "error"
         );
 
@@ -1500,10 +2415,11 @@ function ambilSiswa(){
       }
 
 
-      if(data.ok === false){
+      if(
+        data.success === false
+      ){
 
         tampilStatus(
-          data.error ||
           data.message ||
           "Gagal mengambil data siswa.",
           "error"
@@ -1515,9 +2431,11 @@ function ambilSiswa(){
 
 
       currentStudents =
-        data.students ||
-        data.data ||
-        [];
+        Array.isArray(
+          data.students
+        )
+          ? data.students
+          : [];
 
 
       tampilkanSiswa(
@@ -1530,16 +2448,23 @@ function ambilSiswa(){
 }
 
 
-/* ============================================================
+/* =========================================================
    TAMPIL SISWA
-   ============================================================ */
+========================================================= */
 
-function tampilkanSiswa(students){
+function tampilkanSiswa(
+  students
+){
 
-  siswaBody.innerHTML = "";
+  siswaBody.innerHTML =
+    "";
 
 
-  if(!Array.isArray(students)){
+  if(
+    !Array.isArray(
+      students
+    )
+  ){
 
     tampilStatus(
       "Format data siswa tidak sesuai.",
@@ -1551,19 +2476,30 @@ function tampilkanSiswa(students){
   }
 
 
-  if(students.length === 0){
+  if(
+    students.length === 0
+  ){
 
     siswaBody.innerHTML = `
+
       <tr>
-        <td colspan="3"
-            style="
-              text-align:center;
-              padding:40px;
-              color:#64748b;
-            ">
-          Tidak ada siswa ditemukan.
+
+        <td
+          colspan="3"
+          style="
+            text-align:center;
+            padding:45px;
+            color:#64748b;
+          "
+        >
+
+          Tidak ada siswa
+          yang ditemukan.
+
         </td>
+
       </tr>
+
     `;
 
   }
@@ -1573,7 +2509,7 @@ function tampilkanSiswa(students){
     function(student,index){
 
       /*
-       * Code.gs kamu mengembalikan:
+       * Code.gs mengirim:
        *
        * row
        * no
@@ -1582,13 +2518,20 @@ function tampilkanSiswa(students){
        * nilai
        */
 
-      const row =
-        document.createElement("tr");
+
+      const tr =
+        document.createElement(
+          "tr"
+        );
+
+
+      const no =
+        student.no ||
+        index + 1;
 
 
       const nama =
         student.nama ||
-        student.name ||
         "";
 
 
@@ -1598,14 +2541,16 @@ function tampilkanSiswa(students){
 
 
       const nilai =
-        student.nilai ??
-        "";
+        student.nilai === null ||
+        student.nilai === undefined
+          ? ""
+          : student.nilai;
 
 
-      row.innerHTML = `
+      tr.innerHTML = `
 
         <td>
-          ${student.no || index + 1}
+          ${escapeHtml(no)}
         </td>
 
         <td>
@@ -1618,7 +2563,8 @@ function tampilkanSiswa(students){
             nisn
               ? `
                 <div class="student-nisn">
-                  NISN: ${escapeHtml(nisn)}
+                  NISN:
+                  ${escapeHtml(nisn)}
                 </div>
               `
               : ""
@@ -1634,10 +2580,17 @@ function tampilkanSiswa(students){
             min="0"
             max="100"
             step="0.01"
-            value="${nilai}"
-            data-row="${student.row || ""}"
-            data-nisn="${escapeHtml(nisn)}"
-            data-nama="${escapeHtml(nama)}"
+            inputmode="decimal"
+            value="${escapeHtml(nilai)}"
+            data-row="${escapeHtml(
+              student.row || ""
+            )}"
+            data-nisn="${escapeHtml(
+              nisn
+            )}"
+            data-nama="${escapeHtml(
+              nama
+            )}"
             placeholder="0–100"
           >
 
@@ -1646,7 +2599,27 @@ function tampilkanSiswa(students){
       `;
 
 
-      siswaBody.appendChild(row);
+      const input =
+        tr.querySelector(
+          ".nilai-input"
+        );
+
+
+      input.addEventListener(
+        "input",
+        function(){
+
+          validasiInputNilai(
+            input
+          );
+
+        }
+      );
+
+
+      siswaBody.appendChild(
+        tr
+      );
 
     }
   );
@@ -1680,23 +2653,75 @@ function tampilkanSiswa(students){
 }
 
 
-/* ============================================================
+/* =========================================================
+   VALIDASI INPUT
+========================================================= */
+
+function validasiInputNilai(
+  input
+){
+
+  const value =
+    input.value.trim();
+
+
+  input.classList.remove(
+    "invalid"
+  );
+
+
+  if(value === ""){
+
+    return true;
+
+  }
+
+
+  const number =
+    Number(value);
+
+
+  if(
+    isNaN(number) ||
+    number < 0 ||
+    number > 100
+  ){
+
+    input.classList.add(
+      "invalid"
+    );
+
+    return false;
+
+  }
+
+
+  return true;
+
+}
+
+
+/* =========================================================
    SIMPAN NILAI
-   ============================================================ */
+========================================================= */
 
 function simpanNilai(){
 
   const inputs =
-    document.querySelectorAll(
-      ".nilai-input"
+    Array.from(
+      document.querySelectorAll(
+        ".nilai-input"
+      )
     );
 
 
-  if(!inputs.length){
+  if(
+    inputs.length === 0
+  ){
 
     tampilStatus(
-      "Tidak ada data siswa.",
-      "error"
+      "Tidak ada data siswa yang dapat disimpan.",
+      "warning"
     );
 
     return;
@@ -1704,70 +2729,111 @@ function simpanNilai(){
   }
 
 
-  const payload = [];
+  /*
+   * VALIDASI SEMUA INPUT
+   */
+
+  let invalid =
+    false;
 
 
   inputs.forEach(
     function(input){
 
-      let nilai =
-        input.value.trim();
-
-
-      /*
-       * Kosong diperbolehkan.
-       */
-
       if(
-        nilai !== ""
+        !validasiInputNilai(
+          input
+        )
       ){
 
-        nilai =
-          Number(nilai);
-
-
-        if(
-          isNaN(nilai) ||
-          nilai < 0 ||
-          nilai > 100
-        ){
-
-          input.focus();
-
-          throw new Error(
-            "Nilai harus berada antara 0 sampai 100."
-          );
-
-        }
+        invalid =
+          true;
 
       }
-
-
-      payload.push({
-
-        row:
-          Number(
-            input.dataset.row
-          ),
-
-        nisn:
-          input.dataset.nisn,
-
-        nilai:
-          nilai
-
-      });
 
     }
   );
 
 
+  if(invalid){
+
+    tampilStatus(
+      "Ada nilai yang tidak valid. Nilai harus 0 sampai 100.",
+      "error"
+    );
+
+    const firstInvalid =
+      document.querySelector(
+        ".nilai-input.invalid"
+      );
+
+
+    if(firstInvalid){
+
+      firstInvalid.focus();
+
+    }
+
+    return;
+
+  }
+
+
   /*
-   * Code.gs kamu menggunakan:
+   * BENTUK PAYLOAD
    *
-   * action=save
-   * subject=...
-   * payload=JSON
+   * Sesuai Code.gs:
+   *
+   * [
+   *   {
+   *     row: 14,
+   *     nisn: "123",
+   *     nilai: 90
+   *   }
+   * ]
+   */
+
+  const payload =
+    inputs.map(
+      function(input){
+
+        const raw =
+          input.value.trim();
+
+
+        let nilai =
+          "";
+
+
+        if(raw !== ""){
+
+          nilai =
+            Number(raw);
+
+        }
+
+
+        return {
+
+          row:
+            Number(
+              input.dataset.row
+            ),
+
+          nisn:
+            input.dataset.nisn || "",
+
+          nilai:
+            nilai
+
+        };
+
+      }
+    );
+
+
+  /*
+   * URL SAVE
    */
 
   const url =
@@ -1785,6 +2851,20 @@ function simpanNilai(){
     );
 
 
+  const btnSimpan =
+    document.getElementById(
+      "btnSimpan"
+    );
+
+
+  btnSimpan.disabled =
+    true;
+
+
+  btnSimpan.textContent =
+    "⏳ Menyimpan...";
+
+
   tampilLoading(
     "Menyimpan nilai..."
   );
@@ -1795,6 +2875,14 @@ function simpanNilai(){
     function(data){
 
       sembunyikanLoading();
+
+
+      btnSimpan.disabled =
+        false;
+
+
+      btnSimpan.textContent =
+        "💾 Simpan Nilai";
 
 
       if(!data){
@@ -1809,12 +2897,37 @@ function simpanNilai(){
       }
 
 
-      if(data.ok === false){
+      if(
+        data.success === false
+      ){
+
+        let pesan =
+          data.message ||
+          "Nilai gagal disimpan.";
+
+
+        /*
+         * Kalau ada error per siswa,
+         * tampilkan jumlahnya.
+         */
+
+        if(
+          Array.isArray(
+            data.errors
+          ) &&
+          data.errors.length
+        ){
+
+          pesan +=
+            " " +
+            data.errors.length +
+            " data perlu diperiksa.";
+
+        }
+
 
         tampilStatus(
-          data.error ||
-          data.message ||
-          "Nilai gagal disimpan.",
+          pesan,
           "error"
         );
 
@@ -1823,9 +2936,48 @@ function simpanNilai(){
       }
 
 
+      /*
+       * SUCCESS
+       */
+
+      const jumlah =
+        data.updatedCount !== undefined
+          ? data.updatedCount
+          : (
+              Array.isArray(
+                data.updated
+              )
+                ? data.updated.length
+                : payload.length
+            );
+
+
       tampilStatus(
-        "✓ Nilai berhasil disimpan ke data kelas.",
+        "✓ " +
+        (
+          data.message ||
+          "Nilai berhasil disimpan."
+        ) +
+        " (" +
+        jumlah +
+        " data diperbarui)",
         "success"
+      );
+
+
+      /*
+       * Setelah simpan,
+       * ambil ulang data supaya
+       * tampilan sesuai spreadsheet.
+       */
+
+      setTimeout(
+        function(){
+
+          refreshSiswa();
+
+        },
+        800
       );
 
     }
@@ -1834,9 +2986,52 @@ function simpanNilai(){
 }
 
 
-/* ============================================================
-   JSONP REQUEST
-   ============================================================ */
+/* =========================================================
+   REFRESH SISWA
+========================================================= */
+
+function refreshSiswa(){
+
+  const url =
+    currentUrl +
+    "?action=students" +
+    "&subject=" +
+    encodeURIComponent(
+      currentSubject
+    );
+
+
+  requestJSONP(
+    url,
+    function(data){
+
+      if(
+        data &&
+        data.success !== false &&
+        Array.isArray(
+          data.students
+        )
+      ){
+
+        currentStudents =
+          data.students;
+
+
+        tampilkanSiswa(
+          data.students
+        );
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   REQUEST JSONP
+========================================================= */
 
 function requestJSONP(
   url,
@@ -1848,47 +3043,116 @@ function requestJSONP(
     Date.now() +
     "_" +
     Math.floor(
-      Math.random() * 100000
+      Math.random() *
+      100000
     );
 
 
-  window[callbackName] =
-    function(data){
+  let finished =
+    false;
 
-      try{
 
-        callback(data);
+  let script =
+    null;
 
-      }
-      finally{
 
-        delete window[
-          callbackName
-        ];
+  /*
+   * Timeout 30 detik.
+   */
 
-        if(script.parentNode){
+  const timeout =
+    setTimeout(
+      function(){
 
-          script.parentNode.removeChild(
-            script
-          );
+        if(finished){
+
+          return;
 
         }
 
+
+        finished =
+          true;
+
+
+        cleanup();
+
+
+        sembunyikanLoading();
+
+
+        tampilStatus(
+          "Koneksi ke Apps Script terlalu lama. Periksa deployment Web App.",
+          "error"
+        );
+
+      },
+      30000
+    );
+
+
+  function cleanup(){
+
+    clearTimeout(
+      timeout
+    );
+
+
+    try{
+
+      delete window[
+        callbackName
+      ];
+
+    }
+    catch(error){}
+
+
+    if(
+      script &&
+      script.parentNode
+    ){
+
+      script.parentNode.removeChild(
+        script
+      );
+
+    }
+
+  }
+
+
+  window[
+    callbackName
+  ] =
+    function(data){
+
+      if(finished){
+
+        return;
+
       }
+
+
+      finished =
+        true;
+
+
+      cleanup();
+
+
+      callback(
+        data
+      );
 
     };
 
 
-  const script =
+  script =
     document.createElement(
       "script"
     );
 
-
-  /*
-   * Code.gs perlu menerima parameter
-   * callback untuk JSONP.
-   */
 
   const separator =
     url.includes("?")
@@ -1905,29 +3169,32 @@ function requestJSONP(
     );
 
 
+  script.async =
+    true;
+
+
   script.onerror =
     function(){
 
-      delete window[
-        callbackName
-      ];
+      if(finished){
 
-
-      if(script.parentNode){
-
-        script.parentNode.removeChild(
-          script
-        );
+        return;
 
       }
+
+
+      finished =
+        true;
+
+
+      cleanup();
 
 
       sembunyikanLoading();
 
 
       tampilStatus(
-        "Gagal menghubungkan ke Apps Script. " +
-        "Periksa deployment Web App dan endpoint Code.gs.",
+        "Gagal menghubungkan ke server kelas. Periksa URL Apps Script dan deployment Web App.",
         "error"
       );
 
@@ -1941,33 +3208,13 @@ function requestJSONP(
 }
 
 
-/* ============================================================
-   KEMBALI KE MAPEL
-============================================================ */
-
-function kembaliMapel(){
-
-  nilaiSection.style.display =
-    "none";
-
-
-  mapelSection.style.display =
-    "block";
-
-
-  mapelSection.scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-  });
-
-}
-
-
-/* ============================================================
+/* =========================================================
    LOADING
-============================================================ */
+========================================================= */
 
-function tampilLoading(text){
+function tampilLoading(
+  text
+){
 
   loadingText.textContent =
     text ||
@@ -1994,9 +3241,9 @@ function sembunyikanLoading(){
 }
 
 
-/* ============================================================
+/* =========================================================
    STATUS
-============================================================ */
+========================================================= */
 
 function tampilStatus(
   message,
@@ -2006,9 +3253,11 @@ function tampilStatus(
   statusEl.textContent =
     message;
 
+
   statusEl.className =
     type ||
     "success";
+
 
   statusEl.style.display =
     "block";
@@ -2022,29 +3271,141 @@ function tampilStatus(
 }
 
 
-/* ============================================================
-   ESCAPE HTML
-============================================================ */
+function hideStatus(){
 
-function escapeHtml(value){
+  statusEl.style.display =
+    "none";
+
+  statusEl.textContent =
+    "";
+
+  statusEl.className =
+    "";
+
+}
+
+
+/* =========================================================
+   STEP
+========================================================= */
+
+function resetSteps(){
+
+  document
+    .querySelectorAll(
+      ".step"
+    )
+    .forEach(
+      function(step){
+
+        step.classList.remove(
+          "active"
+        );
+
+      }
+    );
+
+
+  document
+    .getElementById(
+      "step1"
+    )
+    .classList.add(
+      "active"
+    );
+
+}
+
+
+function setStep(
+  number
+){
+
+  document
+    .querySelectorAll(
+      ".step"
+    )
+    .forEach(
+      function(step,index){
+
+        step.classList.toggle(
+          "active",
+          index < number
+        );
+
+      }
+    );
+
+}
+
+
+/* =========================================================
+   KEMBALI KE MAPEL
+========================================================= */
+
+function kembaliMapel(){
+
+  nilaiSection.style.display =
+    "none";
+
+
+  mapelSection.style.display =
+    "block";
+
+
+  setStep(
+    3
+  );
+
+
+  mapelSection.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHtml(
+  value
+){
+
+  if(
+    value === null ||
+    value === undefined
+  ){
+
+    return "";
+
+  }
+
 
   return String(value)
+
     .replaceAll(
       "&",
       "&amp;"
     )
+
     .replaceAll(
       "<",
       "&lt;"
     )
+
     .replaceAll(
       ">",
       "&gt;"
     )
+
     .replaceAll(
       '"',
       "&quot;"
     )
+
     .replaceAll(
       "'",
       "&#039;"
@@ -2052,7 +3413,28 @@ function escapeHtml(value){
 
 }
 
+
+/* =========================================================
+   START
+========================================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
+
+    /*
+     * Aplikasi siap.
+     */
+
+    console.log(
+      "Raport Integrasi siap."
+    );
+
+  }
+);
+
 </script>
 
 </body>
+
 </html>
