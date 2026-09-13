@@ -1,0 +1,8 @@
+{
+  "name": "Raport Integrasi",
+  "description": "Aplikasi Raport Integrasi Pondok Modern Al-Ghozali untuk input nilai santri dan siswa",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
